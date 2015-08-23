@@ -32,5 +32,4 @@ class TaskManager
   def self.find(id)
     Task.new(raw_task(id))
   end
-
 end
