@@ -1,0 +1,6 @@
+---
+tasks:
+- id: 1
+  title: Groceries
+  description: Chicken, eggs, spinach, milk
+total: 1
