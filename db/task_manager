@@ -3,4 +3,7 @@ tasks:
 - id: 1
   title: Groceries
   description: Chicken, eggs, spinach, milk
-total: 1
+- id: 2
+  title: Tomorrow
+  description: Oil change
+total: 2
