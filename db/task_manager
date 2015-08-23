@@ -1,9 +1,0 @@
----
-tasks:
-- id: 1
-  title: task 1
-  description: to do 1
-- id: 2
-  title: task 2
-  description: to do 2
-total: 2
