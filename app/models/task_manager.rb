@@ -11,6 +11,14 @@ class TaskManager
     end
   end
 
+  def self.update(id, task)
+    database.transaction do
+      target = database['tasks'].find { |data| data["id"] == id}
+      target["title"] = task[:title]
+      target["description"] = task[:description]
+    end
+  end
+  
   def self.database
     @database ||= YAML::Store.new("db/task_manager")
   end
