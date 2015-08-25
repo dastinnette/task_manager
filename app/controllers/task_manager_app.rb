@@ -7,6 +7,11 @@ class TaskManagerApp < Sinatra::Base
     erb :dashboard
   end
 
+  get '/tasks/:id/edit' do |id|
+    @task = TaskManager.find(id.to_i)
+    erb :edit
+  end
+
   get '/tasks' do
     @tasks = TaskManager.all
     erb :index
@@ -25,4 +30,6 @@ class TaskManagerApp < Sinatra::Base
     @task = TaskManager.find(id.to_i)
     erb :show
   end
+
+
 end
