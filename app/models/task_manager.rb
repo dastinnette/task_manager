@@ -18,7 +18,13 @@ class TaskManager
       target["description"] = task[:description]
     end
   end
-  
+
+  def self.delete(id)
+    database.transaction do
+      database['tasks'].delete_if { |task| task["id"] == id}
+    end
+  end
+
   def self.database
     @database ||= YAML::Store.new("db/task_manager")
   end

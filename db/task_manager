@@ -3,9 +3,6 @@ tasks:
 - id: 1
   title: Groceries
   description: Chicken, eggs, spinach, milk
-- id: 2
-  title: Tomorrow
-  description: Oil change and groceries
 - id: 3
   title: Lightning Talk
   description: Outline
