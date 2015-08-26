@@ -6,4 +6,7 @@ tasks:
 - id: 3
   title: Lightning Talk
   description: Outline
-total: 3
+- id: 4
+  title: Learn Karate
+  description: Like a boss
+total: 4

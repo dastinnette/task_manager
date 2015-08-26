@@ -25,7 +25,11 @@ class TaskManager
   end
 
   def self.database
-    @database ||= YAML::Store.new("db/task_manager")
+    if ENV["RACK_ENV"] == "test"
+      @database ||= YAML::Store.new("db/task_manager_test")
+    else
+      @database ||= YAML::Store.new("db/task_manager")
+    end
   end
 
   def self.raw_tasks
@@ -44,5 +48,12 @@ class TaskManager
 
   def self.find(id)
     Task.new(raw_task(id))
+  end
+
+  def self.delete_all
+    database.transaction do
+      database['tasks'] = []
+      database['total'] = 0
+    end
   end
 end
